@@ -1,0 +1,26 @@
+package com.nagarro.flightSearching.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.nagarro.flightSearching.dao.SearchDAO;
+import com.nagarro.flightSearching.model.Flight;
+
+@Service("searchService")
+public class SearchServiceImpl implements SearchService {
+
+	@Autowired
+	private SearchDAO searchDAO;
+
+	public void setSearchDAO(SearchDAO searchDAO) {
+		this.searchDAO = searchDAO;
+	}
+
+	public List<Flight> searchFlights(String destination, String arrival,
+			String date, String flightClass) {
+		return searchDAO.searchFlights(destination, arrival, date, flightClass);
+	}
+	
+}

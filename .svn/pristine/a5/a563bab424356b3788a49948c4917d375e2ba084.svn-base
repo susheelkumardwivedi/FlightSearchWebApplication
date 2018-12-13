@@ -1,0 +1,9 @@
+package com.nagarro.flightSearching.service;
+
+import java.util.List;
+
+import com.nagarro.flightSearching.model.Flight;
+
+public interface SearchService {
+	public List<Flight> searchFlights(String destination,String arrival,String date,String flightClass);
+}
